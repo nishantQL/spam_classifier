@@ -14,7 +14,7 @@ export default function Home() {
     setResult("");
 
     try {
-      const res = await fetch("https://spam-classifier-phi.vercel.app/predict", {
+      const res = await fetch("https://spam-classifier-3n38.onrender.com/predict", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
