@@ -21,6 +21,15 @@ vectorizer = pickle.load(open("tfidf_vectorizer.pkl", "rb"))
 class Message(BaseModel):
     text: str
 
+# Health route (for uptime monitoring)
+@app.get("/")
+def home():
+    return {"message": "Backend running"}
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
 @app.post("/predict")
 def predict(message: Message):
     transformed = vectorizer.transform([message.text])
